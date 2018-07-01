@@ -4,7 +4,7 @@ import com.harry1453.burst.explorer.repository.ConfigRepository
 
 object BurstServiceProviders {
     @JvmStatic
-    fun getBurstServiceProvider(objectService: ObjectService, configRepository: ConfigRepository): BurstServiceProvider {
+    fun getBurstServiceProvider(objectService: ObjectService, configRepository: ConfigRepository): BurstServiceProvider { // todo
         return BurstServiceProvider(objectService, configRepository)
     }
 

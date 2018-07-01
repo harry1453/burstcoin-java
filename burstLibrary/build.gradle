@@ -14,7 +14,17 @@ dependencies {
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Apache HTTP Client
+    testImplementation 'org.apache.httpcomponents:httpclient:4.5.5'
+
+    // Testing
+    testCompileOnly 'junit:junit:4.12'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.1.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
 }
 
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"
+test {
+    useJUnitPlatform()
+}
