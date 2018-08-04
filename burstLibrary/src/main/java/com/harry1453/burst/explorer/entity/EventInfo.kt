@@ -3,10 +3,10 @@ package com.harry1453.burst.explorer.entity
 import org.jetbrains.annotations.Nullable
 import java.math.BigInteger
 
-class EventInfo(@JvmField val name: String, @Nullable infoPage: String?, @Nullable blockHeight: BigInteger?) {
+class EventInfo(@JvmField val name: String, @Nullable infoPage: String?, @Nullable blockHeight: Long?) {
     @JvmField val infoPage: String
     @JvmField val infoPageSet: Boolean
-    @JvmField val blockHeight: BigInteger
+    @JvmField val blockHeight: Long
     @JvmField val blockHeightSet: Boolean
 
     init {
@@ -19,7 +19,7 @@ class EventInfo(@JvmField val name: String, @Nullable infoPage: String?, @Nullab
         }
 
         if (blockHeight == null) {
-            this.blockHeight = BigInteger.ZERO
+            this.blockHeight = 0
             blockHeightSet = false
         } else {
             this.blockHeight = blockHeight

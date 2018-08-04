@@ -6,9 +6,9 @@ data class Transaction (
         @JvmField val amount: BurstValue,
         @JvmField val blockID: BigInteger,
         @JvmField val fullHash: String,
-        @JvmField val confirmations: BigInteger,
+        @JvmField val confirmations: Long,
         @JvmField val fee: BurstValue,
-        @JvmField val type: BigInteger,
+        @JvmField val type: Int,
         @JvmField val signatureHash: String,
         @JvmField val signature: String,
         @JvmField val sender: BurstAddress,
@@ -16,5 +16,5 @@ data class Transaction (
         @JvmField val timestamp: BigInteger,
         @JvmField val transactionID: BigInteger,
         // TODO Attachment
-        @JvmField val subType: BigInteger
+        @JvmField val subType: Int
 )

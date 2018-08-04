@@ -54,15 +54,15 @@ public final class RepoInfoService implements BurstInfoService {
         String blockHeight;
 
         EventInfo toEventInfo() {
-            BigInteger blockHeightBigInteger = null;
+            Long blockHeightLong = null;
 
             if (blockHeight != null) {
                 try {
-                    blockHeightBigInteger = new BigInteger(blockHeight);
-                } catch (Exception ignored) {}
+                    blockHeightLong = Long.valueOf(blockHeight);
+                } catch (NumberFormatException ignored) {}
             }
 
-            return new EventInfo(name, infoPage, blockHeightBigInteger);
+            return new EventInfo(name, infoPage, blockHeightLong);
         }
     }
 }

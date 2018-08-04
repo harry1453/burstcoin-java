@@ -137,24 +137,24 @@ public final class NodeBlockchainService implements BurstBlockchainService {
     }
 
     private class BlockResponse {
-        BigInteger payloadLength;
+        long payloadLength;
         String totalAmountNQT;
         BigInteger generator;
-        BigInteger numberOfTransactions;
+        long numberOfTransactions;
         String totalFeeNQT;
         String blockReward;
         List<BigInteger> transactions;
         BigInteger block;
         BigInteger timestamp;
-        BigInteger height;
+        long height;
     }
 
     private class TransactionResponse {
         String signature;
         String feeNQT;
-        BigInteger type;
-        BigInteger subtype;
-        BigInteger confirmations;
+        int type;
+        int subtype;
+        long confirmations;
         String fullHash;
         String signatureHash;
         BigInteger sender;
