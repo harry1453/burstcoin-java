@@ -4,17 +4,14 @@ import com.harry1453.burst.explorer.repository.ConfigRepository
 
 object BurstServiceProviders {
     @JvmStatic
-    fun getBurstServiceProvider(objectService: ObjectService, configRepository: ConfigRepository): BurstServiceProvider { // todo
-        return BurstServiceProvider(objectService, configRepository)
-    }
+    fun getBurstServiceProvider(objectService: ObjectService, configRepository: ConfigRepository): BurstServiceProvider = BurstServiceProvider(objectService, configRepository)
 
     @JvmStatic
-    fun getObjectService(networkService: NetworkService): ObjectService {
-        return NetworkObjectService(networkService, GsonDeserializerService())
-    }
+    fun getBurstServiceProvider(networkService: NetworkService, configRepository: ConfigRepository): BurstServiceProvider = BurstServiceProvider(getObjectService(networkService), configRepository)
 
     @JvmStatic
-    fun getObjectService(networkService: NetworkService, deserializerService: DeserializerService): ObjectService {
-        return NetworkObjectService(networkService, deserializerService)
-    }
+    fun getObjectService(networkService: NetworkService): ObjectService = NetworkObjectService(networkService, GsonDeserializerService())
+
+    @JvmStatic
+    fun getObjectService(networkService: NetworkService, deserializerService: DeserializerService): ObjectService = NetworkObjectService(networkService, deserializerService)
 }

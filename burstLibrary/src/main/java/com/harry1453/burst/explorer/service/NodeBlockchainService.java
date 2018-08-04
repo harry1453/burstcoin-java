@@ -28,14 +28,11 @@ public final class NodeBlockchainService implements BurstBlockchainService {
         this.objectService = objectService;
     }
 
-    private String getNodeAddress() {
-        return configRepository.getNodeAddress();
-    }
-
     @NotNull
     @Override
     public Single<List<Block>> fetchRecentBlocks() {
-        return objectService.fetchObject(getNodeAddress() + "?requestType=getBlocks&firstIndex=0&lastIndex=100", RecentBlocksResponse.class)
+        return objectService
+                .fetchObject(configRepository.getNodeAddress() + "?requestType=getBlocks&firstIndex=0&lastIndex=100", RecentBlocksResponse.class)
                 .flattenAsObservable(list -> list.blocks)
                 .flatMap(blockResponse -> blockResponseToBlock(Single.just(blockResponse), false).toObservable())
                 .toList();
@@ -55,17 +52,18 @@ public final class NodeBlockchainService implements BurstBlockchainService {
     @NotNull
     @Override
     public Single<Block> fetchBlockByHeight(final BigInteger blockHeight) {
-        return blockResponseToBlock(objectService.fetchObject(getNodeAddress() + "?requestType=getBlock&height=" + blockHeight.toString(), BlockResponse.class), true);
+        return blockResponseToBlock(objectService.fetchObject(configRepository.getNodeAddress() + "?requestType=getBlock&height=" + blockHeight.toString(), BlockResponse.class), true);
     }
 
     @NotNull
     @Override
     public Single<Block> fetchBlockByID(final BigInteger blockID) {
-        return blockResponseToBlock(objectService.fetchObject(getNodeAddress() + "?requestType=getBlock&block=" + blockID.toString(), BlockResponse.class), true);
+        return blockResponseToBlock(objectService.fetchObject(configRepository.getNodeAddress() + "?requestType=getBlock&block=" + blockID.toString(), BlockResponse.class), true);
     }
 
     private Single<Account> fetchAccountWithRewardRecipient(AccountResponse rewardRecipient, BigInteger accountID) {
-        return objectService.fetchObject(getNodeAddress() + "?requestType=getAccount&account=" + accountID, AccountResponse.class)
+        return objectService
+                .fetchObject(configRepository.getNodeAddress() + "?requestType=getAccount&account=" + accountID, AccountResponse.class)
                 .map(account -> new Account(new BurstAddress(account.account), account.publicKey, account.name != null ? account.name : "", account.description != null? account.description : "", BurstValue.fromNQT(account.balanceNQT), BurstValue.fromNQT(account.forgedBalanceNQT), new BurstAddress(rewardRecipient.account), rewardRecipient.name == null ? "" : rewardRecipient.name));
     }
 
@@ -73,28 +71,31 @@ public final class NodeBlockchainService implements BurstBlockchainService {
     @Override
     public Single<Account> fetchAccount(@NotNull final BigInteger accountID) {
         return fetchAccountRewardRecipient(accountID)
-                .flatMap(rewardRecipientID -> objectService.fetchObject(getNodeAddress() + "?requestType=getAccount&account=" + rewardRecipientID, AccountResponse.class))
+                .flatMap(rewardRecipientID -> objectService.fetchObject(configRepository.getNodeAddress() + "?requestType=getAccount&account=" + rewardRecipientID, AccountResponse.class))
                 .flatMap(rewardRecipient -> fetchAccountWithRewardRecipient(rewardRecipient, accountID));
     }
 
     @NotNull
     @Override
     public Single<BigInteger> fetchAccountRewardRecipient(@NotNull final BigInteger accountID) {
-        return objectService.fetchObject(getNodeAddress() + "?requestType=getRewardRecipient&account=" + accountID, RewardRecipientResponse.class)
+        return objectService
+                .fetchObject(configRepository.getNodeAddress() + "?requestType=getRewardRecipient&account=" + accountID, RewardRecipientResponse.class)
                 .map(response -> response.rewardRecipient);
     }
 
     @NotNull
     @Override
     public Single<List<BigInteger>> fetchAccountTransactions(final BigInteger accountID) {
-        return objectService.fetchObject(getNodeAddress() + "?requestType=getAccountTransactionIds&account=" + accountID.toString(), AccountTransactionsResponse.class)
+        return objectService
+                .fetchObject(configRepository.getNodeAddress() + "?requestType=getAccountTransactionIds&account=" + accountID.toString(), AccountTransactionsResponse.class)
                 .map(response -> response.transactionIds);
     }
 
     @NotNull
     @Override
     public Single<Transaction> fetchTransaction(final BigInteger transactionID) {
-        return objectService.fetchObject(getNodeAddress() + "?requestType=getTransaction&transaction=" + transactionID.toString(), TransactionResponse.class)
+        return objectService
+                .fetchObject(configRepository.getNodeAddress() + "?requestType=getTransaction&transaction=" + transactionID.toString(), TransactionResponse.class)
                 .map(TransactionResponse::toTransaction);
     }
 

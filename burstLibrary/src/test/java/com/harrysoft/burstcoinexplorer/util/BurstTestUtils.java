@@ -7,6 +7,6 @@ import com.harrysoft.burstcoinexplorer.mock.MockNetworkService;
 
 public class BurstTestUtils {
     public static BurstServiceProvider getBurstServiceProvider() {
-        return BurstServiceProviders.getBurstServiceProvider(BurstServiceProviders.getObjectService(new MockNetworkService()), new MockConfigRepository());
+        return BurstServiceProviders.getBurstServiceProvider(new MockNetworkService(), new MockConfigRepository());
     }
 }
