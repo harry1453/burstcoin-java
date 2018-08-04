@@ -10,7 +10,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.math.BigInteger;
 import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
@@ -34,9 +33,9 @@ public class BurstInfoServiceTest {
         for (EventInfo eventInfo : eventInfoArray) {
             assertNotNull(eventInfo);
             if (eventInfo.blockHeightSet) {
-                assertNotSame(BigInteger.ZERO, eventInfo.blockHeight);
+                assertNotSame(0, eventInfo.blockHeight);
             } else {
-                assertEquals(BigInteger.ZERO, eventInfo.blockHeight);
+                assertEquals(0, eventInfo.blockHeight);
             }
             if (eventInfo.infoPageSet) {
                 assertNotSame("", eventInfo.infoPage);
