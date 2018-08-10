@@ -1,4 +1,4 @@
-package com.harrysoft.burstcoinexplorer.util;
+package com.harry1453.burst.test.util;
 
 import io.reactivex.Single;
 import io.reactivex.observers.TestObserver;

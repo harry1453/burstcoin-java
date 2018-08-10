@@ -1,6 +1,6 @@
-package com.harrysoft.burstcoinexplorer.runner;
+package com.harry1453.burst.test.runner;
 
-import com.harrysoft.burstcoinexplorer.test.*;
+import com.harry1453.burst.test.test.*;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

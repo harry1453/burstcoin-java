@@ -1,9 +1,9 @@
-package com.harrysoft.burstcoinexplorer.util;
+package com.harry1453.burst.test.util;
 
 import com.harry1453.burst.explorer.service.BurstServiceProvider;
 import com.harry1453.burst.explorer.service.BurstServiceProviders;
-import com.harrysoft.burstcoinexplorer.mock.MockConfigRepository;
-import com.harrysoft.burstcoinexplorer.mock.MockNetworkService;
+import com.harry1453.burst.test.mock.MockConfigRepository;
+import com.harry1453.burst.test.mock.MockNetworkService;
 
 public class BurstTestUtils {
     public static BurstServiceProvider getBurstServiceProvider() {

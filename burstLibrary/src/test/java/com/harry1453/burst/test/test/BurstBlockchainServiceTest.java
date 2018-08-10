@@ -1,10 +1,10 @@
-package com.harrysoft.burstcoinexplorer.test;
+package com.harry1453.burst.test.test;
 
 import com.harry1453.burst.explorer.entity.Block;
 import com.harry1453.burst.explorer.service.BurstBlockchainService;
-import com.harrysoft.burstcoinexplorer.TestVariables;
-import com.harrysoft.burstcoinexplorer.util.BurstTestUtils;
-import com.harrysoft.burstcoinexplorer.util.SingleTestUtils;
+import com.harry1453.burst.test.TestVariables;
+import com.harry1453.burst.test.util.BurstTestUtils;
+import com.harry1453.burst.test.util.SingleTestUtils;
 
 import org.junit.Before;
 import org.junit.Test;
