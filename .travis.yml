@@ -8,4 +8,4 @@ cache:
     - $HOME/.gradle/wrapper/
 jdk:
   - oraclejdk8
-  - openjdk8
+#  - openjdk8
