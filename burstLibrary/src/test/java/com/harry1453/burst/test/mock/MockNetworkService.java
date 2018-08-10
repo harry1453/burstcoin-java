@@ -30,6 +30,7 @@ public class MockNetworkService implements NetworkService {
             while ((line = rd.readLine()) != null) {
                 result.append(line);
             }
+            System.err.println("response for " + url + ": " + result.toString());
             return result.toString();
         });
     }

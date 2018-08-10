@@ -39,7 +39,6 @@ public final class NodeBlockchainService implements BurstBlockchainService {
     }
 
     private Single<Block> blockResponseToBlock(Single<BlockResponse> blockResponseSingle, boolean fetchGenerator) {
-        System.err.println("fetchGenerator: " + fetchGenerator);
         if (fetchGenerator) {
             return blockResponseSingle
                     .flatMap(blockResponse -> fetchAccount(blockResponse.generator)
