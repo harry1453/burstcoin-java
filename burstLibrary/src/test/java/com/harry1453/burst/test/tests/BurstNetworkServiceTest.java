@@ -1,9 +1,9 @@
-package com.harrysoft.burstcoinexplorer.test;
+package com.harry1453.burst.test.tests;
 
 import com.harry1453.burst.explorer.entity.NetworkStatus;
 import com.harry1453.burst.explorer.service.BurstNetworkService;
-import com.harrysoft.burstcoinexplorer.util.BurstTestUtils;
-import com.harrysoft.burstcoinexplorer.util.SingleTestUtils;
+import com.harry1453.burst.test.util.BurstTestUtils;
+import com.harry1453.burst.test.util.SingleTestUtils;
 
 import org.junit.Before;
 import org.junit.Test;

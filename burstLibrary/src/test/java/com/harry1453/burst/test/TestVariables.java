@@ -1,4 +1,4 @@
-package com.harrysoft.burstcoinexplorer;
+package com.harry1453.burst.test;
 
 public class TestVariables {
     public static final String EXAMPLE_BLOCK_HEIGHT = "470000";

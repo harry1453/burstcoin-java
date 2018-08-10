@@ -1,11 +1,11 @@
-package com.harrysoft.burstcoinexplorer.test;
+package com.harry1453.burst.test.tests;
 
 import com.harry1453.burst.explorer.entity.SearchRequestType;
 import com.harry1453.burst.explorer.entity.SearchResult;
 import com.harry1453.burst.explorer.service.BurstBlockchainService;
-import com.harrysoft.burstcoinexplorer.TestVariables;
-import com.harrysoft.burstcoinexplorer.util.BurstTestUtils;
-import com.harrysoft.burstcoinexplorer.util.SingleTestUtils;
+import com.harry1453.burst.test.TestVariables;
+import com.harry1453.burst.test.util.BurstTestUtils;
+import com.harry1453.burst.test.util.SingleTestUtils;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -39,14 +39,13 @@ public class DetermineSearchRequestTypeTest {
     @Test
     public void testBurstBlockchainServiceDetermineIDTypeBlockHeight() {
         SearchResult result = SingleTestUtils.testSingle(burstBlockchainService.determineSearchRequestType(TestVariables.EXAMPLE_BLOCK_HEIGHT));
-        assertThat(result.requestType, anyOf(is(SearchRequestType.BLOCK_ID), is(SearchRequestType.BLOCK_NUMBER)));
+        assertEquals(SearchRequestType.BLOCK_NUMBER, result.requestType);
     }
 
     @Test
     public void testBurstBlockchainServiceDetermineIDTypeBlockID() {
         SearchResult result = SingleTestUtils.testSingle(burstBlockchainService.determineSearchRequestType(TestVariables.EXAMPLE_BLOCK_ID));
-        // In the NodeBlockchainService, it is impossible to separate a BLOCK_ID and a BLOCK_NUMBER
-        assertThat(result.requestType, anyOf(is(SearchRequestType.BLOCK_ID), is(SearchRequestType.BLOCK_NUMBER)));
+        assertEquals(SearchRequestType.BLOCK_ID, result.requestType);
     }
 
     @Test

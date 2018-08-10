@@ -1,4 +1,4 @@
-package com.harrysoft.burstcoinexplorer.mock;
+package com.harry1453.burst.test.mock;
 
 import com.harry1453.burst.explorer.service.NetworkService;
 
