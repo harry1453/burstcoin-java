@@ -10,7 +10,6 @@ public class SingleTestUtils {
         assertNotNull(single);
         TestObserver<T> observer = single.test();
         assertTrue(observer.awaitTerminalEvent());
-        observer.errors().forEach(Throwable::printStackTrace);
         observer.assertNoErrors();
         T object = observer.values().get(0);
         assertNotNull(object);

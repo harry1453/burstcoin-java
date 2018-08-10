@@ -1,4 +1,4 @@
-package com.harry1453.burst.test.test;
+package com.harry1453.burst.test.tests;
 
 import com.harry1453.burst.explorer.entity.NetworkStatus;
 import com.harry1453.burst.explorer.service.BurstNetworkService;
