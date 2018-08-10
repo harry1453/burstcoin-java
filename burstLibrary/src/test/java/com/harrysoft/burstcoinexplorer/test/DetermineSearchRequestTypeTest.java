@@ -39,14 +39,13 @@ public class DetermineSearchRequestTypeTest {
     @Test
     public void testBurstBlockchainServiceDetermineIDTypeBlockHeight() {
         SearchResult result = SingleTestUtils.testSingle(burstBlockchainService.determineSearchRequestType(TestVariables.EXAMPLE_BLOCK_HEIGHT));
-        assertThat(result.requestType, anyOf(is(SearchRequestType.BLOCK_ID), is(SearchRequestType.BLOCK_NUMBER)));
+        assertEquals(SearchRequestType.BLOCK_NUMBER, result.requestType);
     }
 
     @Test
     public void testBurstBlockchainServiceDetermineIDTypeBlockID() {
         SearchResult result = SingleTestUtils.testSingle(burstBlockchainService.determineSearchRequestType(TestVariables.EXAMPLE_BLOCK_ID));
-        // In the NodeBlockchainService, it is impossible to separate a BLOCK_ID and a BLOCK_NUMBER
-        assertThat(result.requestType, anyOf(is(SearchRequestType.BLOCK_ID), is(SearchRequestType.BLOCK_NUMBER)));
+        assertEquals(SearchRequestType.BLOCK_ID, result.requestType);
     }
 
     @Test
