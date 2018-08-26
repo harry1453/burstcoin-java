@@ -1,7 +1,7 @@
 package com.harry1453.burst.test.tests;
 
-import com.harry1453.burst.explorer.entity.BurstPrice;
-import com.harry1453.burst.explorer.service.BurstPriceService;
+import com.harry1453.burst.entity.price.BurstPrice;
+import com.harry1453.burst.service.BurstPriceService;
 import com.harry1453.burst.test.util.BurstTestUtils;
 import com.harry1453.burst.test.util.SingleTestUtils;
 

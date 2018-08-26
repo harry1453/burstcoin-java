@@ -1,6 +1,6 @@
 package com.harry1453.burst.test.mock;
 
-import com.harry1453.burst.explorer.service.NetworkService;
+import com.harry1453.burst.service.NetworkService;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

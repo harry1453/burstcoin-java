@@ -1,7 +1,7 @@
 package com.harry1453.burst.test.tests;
 
 import com.harry1453.burst.BurstUtils;
-import com.harry1453.burst.explorer.entity.BurstAddress;
+import com.harry1453.burst.entity.general.BurstAddress;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

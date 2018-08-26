@@ -1,6 +1,6 @@
 package com.harry1453.burst
 
-import com.harry1453.burst.explorer.entity.Block
+import com.harry1453.burst.entity.onchain.Block
 import org.joda.time.DateTime
 import org.joda.time.DateTimeZone
 import org.joda.time.format.DateTimeFormatterBuilder

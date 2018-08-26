@@ -1,6 +1,6 @@
 package com.harry1453.burst.test.mock;
 
-import com.harry1453.burst.explorer.repository.ConfigRepository;
+import com.harry1453.burst.repository.ConfigRepository;
 import org.jetbrains.annotations.NotNull;
 
 public class MockConfigRepository implements ConfigRepository {

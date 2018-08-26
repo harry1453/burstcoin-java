@@ -1,7 +1,7 @@
 package com.harry1453.burst.test.tests;
 
-import com.harry1453.burst.explorer.entity.NetworkStatus;
-import com.harry1453.burst.explorer.service.BurstNetworkService;
+import com.harry1453.burst.entity.network.NetworkStatus;
+import com.harry1453.burst.service.BurstNetworkService;
 import com.harry1453.burst.test.util.BurstTestUtils;
 import com.harry1453.burst.test.util.SingleTestUtils;
 

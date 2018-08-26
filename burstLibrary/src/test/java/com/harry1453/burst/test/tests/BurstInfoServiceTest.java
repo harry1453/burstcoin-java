@@ -1,7 +1,7 @@
 package com.harry1453.burst.test.tests;
 
-import com.harry1453.burst.explorer.entity.EventInfo;
-import com.harry1453.burst.explorer.service.BurstInfoService;
+import com.harry1453.burst.entity.network.EventInfo;
+import com.harry1453.burst.service.BurstInfoService;
 import com.harry1453.burst.test.util.BurstTestUtils;
 import com.harry1453.burst.test.util.SingleTestUtils;
 

@@ -1,7 +1,7 @@
 package com.harry1453.burst.test.tests;
 
-import com.harry1453.burst.explorer.entity.Block;
-import com.harry1453.burst.explorer.service.BurstBlockchainService;
+import com.harry1453.burst.entity.onchain.Block;
+import com.harry1453.burst.service.BurstBlockchainService;
 import com.harry1453.burst.test.TestVariables;
 import com.harry1453.burst.test.util.BurstTestUtils;
 import com.harry1453.burst.test.util.SingleTestUtils;

@@ -1,8 +1,8 @@
 package com.harry1453.burst.test.tests;
 
-import com.harry1453.burst.explorer.entity.SearchRequestType;
-import com.harry1453.burst.explorer.entity.SearchResult;
-import com.harry1453.burst.explorer.service.BurstBlockchainService;
+import com.harry1453.burst.entity.search.SearchRequestType;
+import com.harry1453.burst.entity.search.SearchResult;
+import com.harry1453.burst.service.BurstBlockchainService;
 import com.harry1453.burst.test.TestVariables;
 import com.harry1453.burst.test.util.BurstTestUtils;
 import com.harry1453.burst.test.util.SingleTestUtils;

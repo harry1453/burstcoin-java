@@ -1,6 +1,6 @@
 package com.harry1453.burst.test.tests;
 
-import com.harry1453.burst.explorer.entity.BurstValue;
+import com.harry1453.burst.entity.general.BurstValue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
